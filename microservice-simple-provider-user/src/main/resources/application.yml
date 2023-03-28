@@ -1,0 +1,22 @@
+server:
+  port: 8000
+
+spring:
+  jpa:
+    # Hibernate 打印执行的sql
+    show-sql: true
+
+  logging:
+    level:
+      root: info
+      #配置日志级别，让Hibernate打印出执行的sql参数
+      org.hibernate: info
+      org.hibernate.type.descriptor.sql.BasicBinder: trace
+      org.hibernate.type.descriptor.sql.BasicExtractor: trace
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # 暴露metrics端点，如需暴露多个，用,分隔；如需暴露所有端点，用'*'
+        include: '*'
