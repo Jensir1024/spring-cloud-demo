@@ -27,6 +27,7 @@
 
         <module>microservice-simple-provider-user</module>
         <module>microservice-simple-consumer-movie</module>
+        <module>eureka</module>
     </modules>
 
     <dependencies>

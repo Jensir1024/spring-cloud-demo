@@ -2,6 +2,10 @@ server:
   port: 8000
 
 spring:
+  application:
+    #指定注册到eureka server上的服务名
+    name: microservice-provider-user
+
   jpa:
     # Hibernate 打印执行的sql
     show-sql: true
@@ -20,3 +24,16 @@ management:
       exposure:
         # 暴露metrics端点，如需暴露多个，用,分隔；如需暴露所有端点，用'*'
         include: '*'
+  endpoint:
+    health:
+      # 是否展示健康检查详情
+      show-details: always
+
+eureka:
+  client:
+    service-url:
+      #指定eureka server通信地址，后缀eureka不能少
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    #是否注册ip到eureka server ，若不指定或设为false,则将主机名注册到eureka server
+    prefer-ip-address: true
