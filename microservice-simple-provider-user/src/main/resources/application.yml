@@ -33,7 +33,7 @@ eureka:
   client:
     service-url:
       #指定eureka server通信地址，后缀eureka不能少
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://user:password123@peer1:8761/eureka/,http://user:password123@peer2:8762/eureka/
   instance:
     #是否注册ip到eureka server ，若不指定或设为false,则将主机名注册到eureka server
     prefer-ip-address: true
